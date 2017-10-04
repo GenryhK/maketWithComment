@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>React Tutorial</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+
+<div id="upPanel">Привет, я #root</div>
+<div id="table">Привет, я таблица</div>
+<div id="coments">Привет, я панель комментарий</div>
+
+
+
+
+
+
+
+
+
+
+<script src="js/react/react.js"></script>
+<script src="js/react/react-dom.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+<script type="text/babel">
+let FirstPanel = React.createClass({
+render(){
+	return(<div id="upPanel"><img src="face.png" /><div id="name">Вероника Ростова</div><div id="position"> менеджер по продажам</div>
+		<div id="free">Подберу для вас самые лучшие предложения.<br/> Мои услуги абсолютно бесплатны</div></div>)
+}
+});//верхняя панель
+
+let Center= React.createClass({
+	render(){return(<table id="blockTable">
+		<tr ><td className="first"></td><td className="first"><div>Услуг</div></td></tr>
+
+		<tr><td><div className="textTab">Ручное бронирование</div><div id="green"></div></td><td><div>11</div></td></tr>
+		<tr><td><div className="textTab">Пакетные туры</div><div id="blue1"></div></td><td><div>3</div></td></tr>
+		<tr><td className="first"><div className="textTab" >Ручное бронирование</div><div id="blue2"></div></td><td className="first"><div>1</div></td></tr>
+		<tr><td className="bold">Всего</td><td><div className="bold">15</div></td></tr>
+
+	</table>)}
+});
+
+
+
+
+
+
+
+
+
+
+let Comments=React.createClass({//коментарии
+	getInitialState(){return{comment:[`Привет, Верунь! ниче себе ты крутая. фотка класс!!!! `,`Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно
+	 стабилизирует кинетический момент, это и есть всемирно известный центр огранки алмазов и торговли бриллиантами?`,`Вероника, здравствуйте! Есть такой вопрос: Особый вид куниц жизненно стабилизирует кинетический момент?`]}},
+	emap(item,i){return(<div className="blockComment"><div id="name" >Лилия Семеновна</div><div className="comments">{item}</div></div>)},
+	update(){let arr=this.state.comment;let inputValue=this.refs.newComment.value;arr.push(inputValue);this.setState({comment:arr});this.refs.newComment.value=``;},
+	updateKey(event){if((event.keyCode==13&&+event.ctrlKey)==1){let arr=this.state.comment;let inputValue=this.refs.newComment.value;arr.push(inputValue);this.setState({comment:arr});}},
+render(){
+	return(<div>
+<table><tr><td><div id="name2" className="panelComment" >Последние отзывы</div></td>
+<td><div className="panelComment">Все отзывы</div></td></tr></table>
+<table id="a"><tr><td><div className="panelComment"><img src="like.png" />131</div></td>
+<td><div className="panelComment"><img src="comment.png" />{this.state.comment.length}</div></td></tr></table>
+		
+		<div>{this.state.comment.map(this.emap)}</div>
+		<div id="footPanel"><input ref="newComment" onKeyUp={this.updateKey}></input>
+		<button onClick={this.update}>Написать консультанту</button></div>
+	</div>)
+}
+})//комментарии
+
+
+ReactDOM.render(<Comments/>,document.querySelector(`#coments`));
+ReactDOM.render(<Center/>,document.querySelector(`#table`));
+ReactDOM.render(<FirstPanel/>,document.querySelector(`#upPanel`));
+
+
+
+</script>
+</script>
+
+
+
+</body>
+</html>

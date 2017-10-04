@@ -1,0 +1,79 @@
+#upPanel{display: flex;
+flex-direction: row;
+flex-wrap: wrap;}
+#upPanel #name{position: absolute;
+margin-top: 28px;
+margin-left: 151px;
+font-weight: bold;
+font-family: Arial;}
+#upPanel #position{position: absolute;
+	margin-top: 50px;
+margin-left: 150px;
+font-family: Arial;
+color:#808080}
+#upPanel #free{position: absolute;
+	margin-top: 67px;
+border: 1px solid #c3c8cd;
+background-color: #fffbc8;
+margin-left: 100px;
+text-align: center;
+text-indent: 25px;}
+#upPanel img{z-index: 4;}
+#coments{display: flex;
+flex-direction: column;
+margin-top: 27px;}
+#coments .comments{
+	border:1px solid #CFCFCF;
+	background-color: #F2FBFF;
+		height: 102px;
+		margin-top: 16px;
+	vertical-align:text-bottom;
+}
+.blockComment{
+	margin-top: 23px; 
+}
+#a{margin-left: 90%;
+}
+#name{font-weight: bold;}
+#name2{font-weight: bold;}
+#footPanel {display: flex;
+	flex-direction: column;
+	background-color: #F2F2F2;
+	
+	margin-top: 20px;
+	height: 195px;
+
+
+}
+#footPanel input{margin-top: 32px;
+height: 63px;
+margin-right: 21px;
+margin-left: 21px;
+border-radius: 1px;}
+#footPanel button{margin-top: 23px;
+	width:283px;
+	height: 41px;
+	border-radius: 60px;
+background-color: #FDD639;
+font-weight: bold;
+align-self: center;}
+
+
+#table{display: flex;
+justify-content: flex-end;}
+
+#green{background-color: #B1E19B;
+	border-radius: 1px;
+width:218px;
+height: 24px}
+#blue1{background-color: #A2D4E8;
+	border-radius: 1px;
+width:53px;
+height: 24px}
+#blue2{background-color: #A2D4E8;
+	border-radius: 1px;
+width:34px;
+height: 24px}
+.textTab{position: absolute;}
+.first{border-bottom: 2px solid #CCCCCC}
+.bold{font-weight: bold;}
